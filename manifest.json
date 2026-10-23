@@ -1,0 +1,34 @@
+{
+  "manifest_version": 3,
+  "name": "Nayanika's AI Resource Footprint Extension",
+  "short_name": "AI Footprint",
+  "version": "1.2.1",
+  "description": "Estimates the electricity and water your Claude.ai chats use, based on 2025 published figures, with everyday comparisons.",
+  "permissions": ["storage", "notifications"],
+  "host_permissions": ["https://claude.ai/*"],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://claude.ai/*"],
+      "js": ["utils.js", "content.js"],
+      "css": ["content.css"],
+      "run_at": "document_idle"
+    }
+  ],
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "Nayanika's AI Resource Footprint",
+    "default_icon": {
+      "16": "icons/icon16.png",
+      "48": "icons/icon48.png",
+      "128": "icons/icon128.png"
+    }
+  },
+  "icons": {
+    "16": "icons/icon16.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  }
+}

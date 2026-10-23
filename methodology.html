@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>How the estimate works</title>
+    <style>
+      body {
+        max-width: 680px;
+        margin: 40px auto;
+        padding: 0 20px;
+        font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+        color: #222;
+        line-height: 1.6;
+      }
+      h1 { font-size: 24px; }
+      h2 { font-size: 17px; margin-top: 28px; }
+      table { border-collapse: collapse; width: 100%; font-size: 14px; }
+      ul { padding-left: 20px; }
+      li { margin-bottom: 6px; }
+      th, td { text-align: left; padding: 6px 8px; border-bottom: 1px solid #ddd; vertical-align: top; }
+      .note { background: #f0f7f0; padding: 12px 14px; border-radius: 8px; }
+      small { color: #777; }
+    </style>
+  </head>
+  <body>
+    <h1>How the estimate works</h1>
+    <p class="note">
+      No AI company publishes per-message energy or water figures for Claude.
+      Every number this extension shows is an estimate based on the most
+      recent public measurements of comparable AI models.
+    </p>
+
+    <h2>The reference exchange</h2>
+    <p>
+      One "typical" exchange is taken as about 600 tokens: a short question
+      and an answer of roughly 500 tokens, the answer length Epoch AI assumed
+      in its 2025 estimate. Each real exchange is scaled by its length
+      relative to that, with length estimated as characters ÷ 4.
+    </p>
+
+    <h2>Electricity: 0.3 Wh per typical exchange</h2>
+    <p>
+      The centre of three 2025 figures that agree closely: Google's measured
+      median Gemini Apps text prompt (0.24 Wh, <em>Measuring the environmental
+      impact of AI inference</em>, Aug 2025), Epoch AI's estimate for GPT-4o
+      (~0.3 Wh, Feb 2025) and OpenAI's stated average ChatGPT query (0.34 Wh,
+      Jun 2025). An earlier and widely quoted figure of about 3 Wh (de Vries,
+      Joule, 2023) is now considered roughly ten times too high for a short
+      query.
+    </p>
+
+    <h2>Water: about 1.1 mL per typical exchange</h2>
+    <p>
+      Calculated as 3.7 mL per Wh, from Li et al., <em>Making AI Less
+      "Thirsty"</em> (2023, updated 2025): about 0.55 L/kWh for on-site
+      data-centre cooling plus about 3.14 L/kWh of off-site water used to
+      generate the electricity (US average). Google's own figure of 0.26 mL
+      per prompt counts cooling only; this extension includes power
+      generation too, so it reads about four times higher.
+    </p>
+
+    <h2>What the estimate leaves out</h2>
+    <p>
+      Training the model, manufacturing the hardware, network traffic and
+      your own device are not included. Each turn of a long conversation
+      also reprocesses earlier messages, and reasoning models use more energy
+      per answer, so long or complex conversations are likely
+      underestimated. Actual figures for Claude
+      depend on hardware, data-centre location and model, none of which are
+      public.
+    </p>
+
+    <h2>If each prompt is small, why is AI's footprint so large?</h2>
+    <p>
+      Both are true. The figures here describe one person's short text
+      chats, which really are small. AI's total footprint is large for
+      other reasons:
+    </p>
+    <ul>
+      <li><strong>Scale.</strong> Fractions of a watt-hour, repeated
+        billions of times a day across every AI service, add up to a
+        meaningful amount of electricity.</li>
+      <li><strong>Chat is only part of it.</strong> Data centres also run
+        image and video generation, reasoning models, long-running coding
+        agents, business use through APIs, and recommendation and search
+        systems. Training each new model is a large extra cost. None of
+        this is in a per-prompt figure.</li>
+      <li><strong>Growth.</strong> The International Energy Agency
+        estimates data centres used about 415 TWh of electricity in 2024
+        (around 1.5% of the world's total) and projects this roughly
+        doubling to about 945 TWh by 2030, with AI the main driver.</li>
+      <li><strong>Local impact.</strong> A data centre's water and power
+        use is concentrated in one place. In a drought-stressed area or on
+        a strained grid, it matters to that community even when it is
+        small globally.</li>
+      <li><strong>Rebound effect.</strong> As AI gets more efficient per
+        prompt, it gets cheaper and is used more, so total consumption can
+        keep rising.</li>
+      <li><strong>Self-reported data.</strong> The per-prompt figures come
+        from the companies themselves, who decide what to count.</li>
+    </ul>
+
+    <h2>Comparisons</h2>
+    <p>
+      LED bulb: 10 W. Phone charge: about 12 Wh. Teaspoon: 5 mL.
+    </p>
+
+    <h2>Privacy</h2>
+    <p>
+      The extension reads the text of your claude.ai messages only to count
+      characters. Everything is calculated in your browser. Nothing is sent
+      anywhere, and only the session totals (character-based token counts and
+      number of exchanges) are stored locally.
+    </p>
+
+    <p><small>Nayanika's AI Resource Footprint Extension · not affiliated with Anthropic.</small></p>
+  </body>
+</html>

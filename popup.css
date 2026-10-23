@@ -1,0 +1,44 @@
+body {
+  width: 280px;
+  padding: 14px 16px;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  color: #222;
+  background: #fff;
+}
+
+h1 {
+  font-size: 15px;
+  margin: 0 0 10px;
+}
+
+#content {
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+#content .row {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 4px;
+}
+
+#content .compare {
+  margin-top: 8px;
+  padding: 8px 10px;
+  background: #f0f7f0;
+  border-radius: 8px;
+  color: #2e7d32;
+}
+
+.disclaimer {
+  margin-top: 12px;
+  font-size: 10px;
+  color: #888;
+  line-height: 1.4;
+}
+
+.disclaimer a {
+  color: #2e7d32;
+  display: block;
+  margin-top: 4px;
+}
